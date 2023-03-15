@@ -1,0 +1,14 @@
+""" This file is needed to run in CI"""
+
+version: "3.8"
+services:
+
+  pytest:
+    container_name: pytest
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - ./t:/t
+      - ./r:/r
+    working_dir: /t/
